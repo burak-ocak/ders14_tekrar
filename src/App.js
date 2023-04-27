@@ -1,9 +1,23 @@
+import { useState } from "react";
+import Todos from "./Todos";
 
 function App() {
+  const [sayac, sayacGuncelle] = useState(0);
+  const [todos, setTodos] = useState(["Süt alınacak", "Yumurta alınacak"]);
+
+  const arttir = () => {
+    sayacGuncelle((oncekiDeger) => oncekiDeger + 1);
+  };
+
   return (
-    <div>
-      Ben app componenti
-    </div>
+    <>
+      <Todos todos={todos} />
+      <hr />
+      <div>
+        Count: {sayac}
+        <button onClick={arttir}>+</button>
+      </div>
+    </>
   );
 }
 
