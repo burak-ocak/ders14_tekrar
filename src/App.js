@@ -1,9 +1,21 @@
+import IsBilgi from "./IsBilgi";
+import Kisi from "./Kisi";
+import useLS from "./useLS";
 
 function App() {
+
+  const [kisiNo, kisiNoGuncelle] = useLS("kisiNo", 1);
+
   return (
-    <div>
-      Ben app componenti
-    </div>
+    <>
+      <Kisi kisiNo={kisiNo}/>
+      <IsBilgi isNo={4}/>
+      <IsBilgi isNo={3}/>
+      <IsBilgi isNo={12}/>
+      <IsBilgi isNo={43}/>
+      <IsBilgi isNo={78}/>
+      <IsBilgi isNo={65}/>
+    </>
   );
 }
 
